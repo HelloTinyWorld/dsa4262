@@ -6,7 +6,9 @@ Follow these steps to get the project up and running on the Ronin server:
 
 Open your terminal and connect via SSH using your Ubuntu user credentials. For example:
 
+```bash
 ssh -i /path/to/your/private_key.pem ubuntu@<ronin-server-address>
+```
 
 Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ronin-server-address>` with the actual server address.
 
