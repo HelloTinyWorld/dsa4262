@@ -43,6 +43,9 @@ The folder structure will look like this after running the data:
 
 Note that the folders will not exist yet and will be created in the subsequent steps
 
+2.1 Note that the project uses jupyter notebooks. For instructions on how to use jupyter notebooks refer to this guide by dataquest: https://www.dataquest.io/blog/jupyter-notebook-tutorial/
+
+
 
 3. Download RNA modification data from AWS
 
