@@ -37,15 +37,19 @@ Please install all necessary packages using the code below
 ```bash
 pip install -r requirements.txt
 ```
-
 1.2 Note that the project uses jupyter notebooks. For instructions on how to use jupyter notebooks refer to this guide by dataquest: https://www.dataquest.io/blog/jupyter-notebook-tutorial/
 
 
 ## Task 1: 
 
-1. Ensure all packages in requirements.txt have been isntalled
-2. Open task1_data_cleaning.ipynb and click **RUN ALL**
-3. Open task1_model_training.ipynb and click **RUN ALL**
+1. Ensure all packages in requirements.txt have been isntalled and create the empty folder called task1
+```bash
+mkdir task1
+```
+2. Next download dataset0.json.gz and data.info.labelled from https://canvas.nus.edu.sg/courses/78679/files/folder/TeamProject_Data/dataset_0
+and move them into the folder task1
+3. Open task1_data_cleaning.ipynb and click **RUN ALL**
+4. Open task1_model_training.ipynb and click **RUN ALL**
 
 
 ## Task 2: Setup and Usage Instructions
