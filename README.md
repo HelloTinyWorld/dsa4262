@@ -1,3 +1,8 @@
+## Task 1: 
+
+
+
+
 ## Task 2: Setup and Usage Instructions
 
 Follow these steps to get the project up and running on the Ronin server:
@@ -28,17 +33,17 @@ The folder structure will look like this after running the data:
 |-- .gitignore
 |-- data_parsing.ipynb
 |-- full_xgb_model.pkl
+|-- task2.ipynb
+|-- requirements.txt
 |-- predictions/
 |    |-- .gitkeep
 |    |-- (multiple prediction CSV files)
 |-- prepared_data/
 |    |-- .gitkeep
 |    |-- (multiple CSV files)
-|-- requirements.txt
 |-- rna_modification_data/
 |    |-- .gitkeep
 |    |-- (multiple cell line subfolders)
-|-- task2.ipynb
 ```
 
 Note that the folders will not exist yet and will be created in the subsequent steps
