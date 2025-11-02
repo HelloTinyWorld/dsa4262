@@ -20,7 +20,7 @@ cd dsa4262
 
 The folder structure will look like this after running the data:
 
-.
+```bash
 |-- .gitignore
 |-- data_parsing.ipynb
 |-- full_xgb_model.pkl
@@ -35,6 +35,7 @@ The folder structure will look like this after running the data:
 |    |-- .gitkeep
 |    |-- (multiple cell line subfolders)
 |-- task2.ipynb
+```
 
 Note that the folders will not exist yet and will be created in the subsequent steps
 
