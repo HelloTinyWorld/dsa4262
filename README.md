@@ -12,6 +12,8 @@ ssh -i /path/to/your/private_key.pem ubuntu@<ronin-server-address>
 
 Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ronin-server-address>` with the actual server address.
 
+Before connecting, please increase the Ronin server disk space to at least 100GB and upgrade the machine to have at least 4GB of RAM to ensure smooth operation.
+
 2. Clone this GitHub repository
 
 Once logged in, run:
