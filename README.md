@@ -13,9 +13,31 @@ Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ro
 2. Clone this GitHub repository
 
 Once logged in, run:
-
+```bash
 git clone https://github.com/HelloTinyWorld/dsa4262.git
 cd dsa4262
+```
+
+The folder structure will look like this after running the data:
+
+.
+|-- .gitignore
+|-- data_parsing.ipynb
+|-- full_xgb_model.pkl
+|-- predictions/
+|    |-- .gitkeep
+|    |-- (multiple prediction CSV files)
+|-- prepared_data/
+|    |-- .gitkeep
+|    |-- (multiple CSV files)
+|-- requirements.txt
+|-- rna_modification_data/
+|    |-- .gitkeep
+|    |-- (multiple cell line subfolders)
+|-- task2.ipynb
+
+Note that the folders will not exist yet and will be created in the subsequent steps
+
 
 3. Download RNA modification data from AWS
 
