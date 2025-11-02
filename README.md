@@ -70,7 +70,7 @@ This downloads all RNA modification data into `~/rna_modification_data`.
 
 4. Run the data parsing notebook
 
-From the project directory, start Jupyter Notebook, open `data_parsing.ipynb`, and click **Run All**.
+From the project directory, start Jupyter Notebook, open `task2_data_parsing.ipynb`, and click **Run All**.
 
 5. Run the main analysis notebook
 
