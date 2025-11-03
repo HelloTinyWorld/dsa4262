@@ -33,24 +33,26 @@ pip install -r requirements.txt
 
 ### Important: Ensure dataset0.json.gz and data.info.labelled are in your downloads folder, dataset0.json will work fine too. 
 
-2. Open another terminal shell and set your working directory to your downloads folder, which should look like this
+2. Open **another** terminal shell and set your working directory to your downloads folder, which should look like this
 ```bash
 cd ~/Downloads
 ```
 
-4. Run the following command, replacing <path_to_key> with the correct path to your .pem SSH key file:
+3. Run the following command on this new terminal shell, replacing <path_to_key> with the correct path to your .pem SSH key file:
 ### Important: rename <path_to_key>/dsa4262-2510-team1-YOURNAME.pem to the path to your .pem file, the code here is a placeholder, same for ubuntu@dsa4262-2510-team1-YOURNAME.nus.cloud:/home/ubuntu/dsa4262/task1/
 ```bash
+cd ~/Downloads
 scp -i "<path_to_key>/dsa4262-2510-team1-YOURNAME.pem" \
   dataset0.json.gz \
   data.info.labelled \
   ubuntu@dsa4262-2510-team1-YOURNAME.nus.cloud:/home/ubuntu/dsa4262/task1/
+```
+4. Now on your **original** terminal shell in which you connected to the cloud server, run this command
 
+```bash
 cd ..
 python3 task1.py
-
 ```
-
 
 
 ## Task 2: Setup and Usage Instructions
