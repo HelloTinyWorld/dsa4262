@@ -1,14 +1,5 @@
 ## Cloning the github repository and setting up ubuntu connection
 
-1. Clone this GitHub repository
-
-Open terminal and set working directory to where you want the project to be in and run:
-```bash
-git clone https://github.com/HelloTinyWorld/dsa4262.git
-cd dsa4262
-pip install -r requirements.txt
-
-```
 
 
 Follow these steps to get the project up and running on the Ronin server:
@@ -24,6 +15,16 @@ ssh -i /path/to/your/private_key.pem ubuntu@<ronin-server-address>
 
 Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ronin-server-address>` with the actual server address.
 
+
+2. Clone this GitHub repository
+
+Open terminal and set working directory to where you want the project to be in and run:
+```bash
+git clone https://github.com/HelloTinyWorld/dsa4262.git
+cd dsa4262
+pip install -r requirements.txt
+
+```
 
 ## Task 1: 
 
