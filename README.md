@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ## Task 1: 
 
-1. Ensure all packages in requirements.txt have been isntalled and create the empty folder called task1
+1. Ensure all packages in requirements.txt have been installed and create the empty folder called task1
 ```bash
 mkdir task1
 ```
@@ -96,4 +96,8 @@ From the project directory, start Jupyter Notebook, open `task2_data_parsing.ipy
 
 Open `task2.ipynb` and click **Run All** to perform the full analysis and generate predictions.
 
+## Using the model for other datasets
+
+1. Other datasets with the same format as in the sgnex website may be used, just download it into the rna_modification_data folder (create the folder if it does not exist yet)
+ 
 
