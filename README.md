@@ -21,7 +21,7 @@ Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ro
 Open terminal and set working directory to where you want the project to be in and run:
 ```bash
 git clone https://github.com/HelloTinyWorld/team1_TeamProject_dsa4262.git
-cd dsa4262
+cd team1_TeamProject_dsa4262/
 pip install -r requirements.txt
 
 ```
@@ -50,6 +50,7 @@ scp -i "<path_to_key>/dsa4262-2510-team1-YOURNAME.pem" \
 4. Now on your **original** terminal shell in which you connected to the cloud server, run this command
 
 ```bash
+cd team1_TeamProject_dsa4262/
 python3 task1.py
 ```
 
