@@ -14,11 +14,11 @@ The folder structure will look like this after running the data:
 |-- data_parsing.ipynb
 |-- full_xgb_model.pkl
 |-- task2.ipynb
-|-- task1/
-|    |-- files required for task1
 |-- task1_data_cleaning.ipynb
 |-- task1_model_training.ipynb
 |-- requirements.txt
+|-- task1/
+|    |-- files required for task1
 |-- predictions/
 |    |-- .gitkeep
 |    |-- (multiple prediction CSV files)
