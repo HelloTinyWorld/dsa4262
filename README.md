@@ -19,7 +19,8 @@ pip install -r requirements.txt
 
 1. Ensure all packages in requirements.txt have been installed and create the empty folder called task1
 ```bash
-mkdir task1
+mkdir -p task1
+
 ```
 2. Next download dataset0.json.gz and data.info.labelled from https://canvas.nus.edu.sg/courses/78679/files/folder/TeamProject_Data/dataset_0
 and move them into the folder task1
