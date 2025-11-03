@@ -45,7 +45,7 @@ cd ~/Downloads
 scp -i "<path_to_key>/dsa4262-2510-team1-YOURNAME.pem" \
   dataset0.json.gz \
   data.info.labelled \
-  ubuntu@dsa4262-2510-team1-YOURNAME.nus.cloud:/home/ubuntu/dsa4262/task1/
+  ubuntu@dsa4262-2510-team1-YOURNAME.nus.cloud:/home/ubuntu/team1_TeamProject_dsa4262/task1/
 ```
 4. Now on your **original** terminal shell in which you connected to the cloud server, run this command
 
@@ -73,7 +73,7 @@ This downloads all RNA modification data into `~/rna_modification_data`.
 
 3. Run this command to get task2 predictions
 ```bash
-cd ..
+cd team1_TeamProject_dsa4262/
 python3 task2.py
 
 ```
