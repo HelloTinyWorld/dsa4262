@@ -20,7 +20,7 @@ Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ro
 
 Open terminal and set working directory to where you want the project to be in and run:
 ```bash
-git clone https://github.com/HelloTinyWorld/dsa4262.git
+git clone https://github.com/HelloTinyWorld/team1_TeamProject_dsa4262.git
 cd dsa4262
 pip install -r requirements.txt
 
