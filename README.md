@@ -1,7 +1,8 @@
 ## Cloning the github repository
+
 1. Clone this GitHub repository
 
-Open terminal and run:
+Open terminal and set working directory to where you want the project to be in and run:
 ```bash
 git clone https://github.com/HelloTinyWorld/dsa4262.git
 cd dsa4262
@@ -13,6 +14,8 @@ Please install all necessary packages using the code below
 pip install -r requirements.txt
 ```
 1.2 Note that the project uses jupyter notebooks. For instructions on how to use jupyter notebooks refer to this guide by dataquest: https://www.dataquest.io/blog/jupyter-notebook-tutorial/
+
+1.3: Open the cloned repository (which is in Users by default)
 
 
 ## Task 1: 
