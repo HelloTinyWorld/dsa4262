@@ -50,7 +50,6 @@ scp -i "<path_to_key>/dsa4262-2510-team1-YOURNAME.pem" \
 4. Now on your **original** terminal shell in which you connected to the cloud server, run this command
 
 ```bash
-pip install -r requirements.txt
 python3 task1.py
 ```
 
