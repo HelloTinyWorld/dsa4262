@@ -1,7 +1,7 @@
 ## Cloning the github repository
 1. Clone this GitHub repository
 
-Once logged in, run:
+Run:
 ```bash
 git clone https://github.com/HelloTinyWorld/dsa4262.git
 cd dsa4262
