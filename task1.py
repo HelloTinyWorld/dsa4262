@@ -17,7 +17,6 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import roc_auc_score, make_scorer
 import joblib
 
-%pip install -r requirements.txt
 
 
 # --------------------------
