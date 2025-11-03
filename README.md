@@ -1,4 +1,4 @@
-## Cloning the github repository
+## Cloning the github repository and setting up ubuntu connection
 
 1. Clone this GitHub repository
 
@@ -6,36 +6,15 @@ Open terminal and set working directory to where you want the project to be in a
 ```bash
 git clone https://github.com/HelloTinyWorld/dsa4262.git
 cd dsa4262
-```
-
-1.1
-Please install all necessary packages using the code below
-```bash
 pip install -r requirements.txt
-```
-1.2 Note that the project uses jupyter notebooks. For instructions on how to use jupyter notebooks refer to this guide by dataquest: https://www.dataquest.io/blog/jupyter-notebook-tutorial/
-
-1.3: Open the cloned repository (which is in Users by default)
-
-
-## Task 1: 
-
-1. Ensure all packages in requirements.txt have been installed and create the empty folder called task1
-```bash
-mkdir -p task1
 
 ```
-2. Next download dataset0.json.gz and data.info.labelled from https://canvas.nus.edu.sg/courses/78679/files/folder/TeamProject_Data/dataset_0
-and move them into the folder task1
-3. Open task1_data_cleaning.ipynb and click **RUN ALL**
-4. Open task1_model_training.ipynb and click **RUN ALL**
 
-
-## Task 2: Setup and Usage Instructions
 
 Follow these steps to get the project up and running on the Ronin server:
 
-1. Connect to the Ronin server
+1. Go to https://ronin.nus.cloud/ and start your machine
+### Important: Before connecting, please increase the Ronin server disk space to at least 100GB and upgrade the machine to have at least 4GB of RAM to ensure smooth operation.
 
 Open your terminal and connect via SSH using your Ubuntu user credentials. For example:
 
@@ -45,10 +24,35 @@ ssh -i /path/to/your/private_key.pem ubuntu@<ronin-server-address>
 
 Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ronin-server-address>` with the actual server address.
 
-Before connecting, please increase the Ronin server disk space to at least 100GB and upgrade the machine to have at least 4GB of RAM to ensure smooth operation.
+
+## Task 1: 
+
+
+1. Download dataset0.json.gz and data.info.labelled from https://canvas.nus.edu.sg/courses/78679/files/folder/TeamProject_Data/dataset_0
+
+### Important: Ensure dataset0.json.gz and data.info.labelled are in your downloads folder, dataset0.json will work fine too. 
+
+2. Open another terminal shell and set your working directory to your downloads folder, which should look like this
+```bash
+cd ~/Downloads
+```
+
+4. Run the following command, replacing <path_to_key> with the correct path to your .pem SSH key file:
+### Important: rename <path_to_key>/dsa4262-2510-team1-YOURNAME.pem to the path to your .pem file, the code here is a placeholder, same for ubuntu@dsa4262-2510-team1-YOURNAME.nus.cloud:/home/ubuntu/dsa4262/task1/
+```bash
+scp -i "<path_to_key>/dsa4262-2510-team1-YOURNAME.pem" \
+  dataset0.json.gz \
+  data.info.labelled \
+  ubuntu@dsa4262-2510-team1-YOURNAME.nus.cloud:/home/ubuntu/dsa4262/task1/
+
+cd ..
+python3 task1.py
+
+```
 
 
 
+## Task 2: Setup and Usage Instructions
 
 2. Download RNA modification data from AWS
 
@@ -62,17 +66,14 @@ aws s3 sync --no-sign-request \
     s3://sg-nex-data/data/processed_data/m6Anet/ ./
 ```
 
-
-
 This downloads all RNA modification data into `~/rna_modification_data`.
 
-3. Run the data parsing notebook
+3. Run this command to get task2 predictions
+```bash
+cd ..
+python3 task2.py
 
-From the project directory, start Jupyter Notebook, open `task2_data_parsing.ipynb`, and click **Run All**.
-
-4. Run the main analysis notebook
-
-Open `task2.ipynb` and click **Run All** to perform the full analysis and generate predictions.
+```
 
 
 5. The final folder structure will look like this
@@ -83,10 +84,8 @@ The folder structure will look like this after running the data:
 |-- .gitignore
 |-- full_xgb_model.pkl
 |-- requirements.txt
-|-- task1_data_cleaning.ipynb
-|-- task1_model_training.ipynb
-|-- task2_data_parsing.ipynb
-|-- task2.ipynb
+|-- task1.py
+|-- task2.py
 |-- task1/
 |    |-- files required for task1
 |-- predictions/
@@ -102,6 +101,6 @@ The folder structure will look like this after running the data:
 
 ## Using the model for other datasets
 
-1. Other datasets with the same format as in the sgnex website may be used, just download it into the rna_modification_data folder (create the folder if it does not exist yet)
+1. Other datasets with the same format as in the sgnex website may be used, just download it into the rna_modification_data folder and run task2.py
  
 
