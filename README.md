@@ -17,6 +17,7 @@ The folder structure will look like this after running the data:
 |-- task1_model_training.ipynb
 |-- task2_data_parsing.ipynb
 |-- task2.ipynb
+(The following folders will be created later)
 |-- task1/
 |    |-- files required for task1
 |-- predictions/
