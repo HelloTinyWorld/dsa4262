@@ -17,9 +17,9 @@ The folder structure will look like this after running the data:
 |-- task1_model_training.ipynb
 |-- task2_data_parsing.ipynb
 |-- task2.ipynb
-(The following folders will be created later)
 |-- task1/
-|    |-- files required for task1
+|    |-- files required for task1, only contains parsed_dataset2.csv which is a test dataset. Rest of the files will be added later
+(The following folders will be created later)
 |-- predictions/
 |    |-- .gitkeep
 |    |-- (multiple prediction CSV files)
