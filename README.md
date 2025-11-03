@@ -7,32 +7,6 @@ git clone https://github.com/HelloTinyWorld/dsa4262.git
 cd dsa4262
 ```
 
-The folder structure will look like this after running the data:
-
-```bash
-|-- .gitignore
-|-- full_xgb_model.pkl
-|-- requirements.txt
-|-- task1_data_cleaning.ipynb
-|-- task1_model_training.ipynb
-|-- task2_data_parsing.ipynb
-|-- task2.ipynb
-|-- task1/
-|    |-- files required for task1, only contains parsed_dataset2.csv which is a test dataset. Rest of the files will be added later
-(The following folders will be created later)
-|-- predictions/
-|    |-- .gitkeep
-|    |-- (multiple prediction CSV files)
-|-- prepared_data/
-|    |-- .gitkeep
-|    |-- (multiple CSV files)
-|-- rna_modification_data/
-|    |-- .gitkeep
-|    |-- (multiple cell line subfolders)
-```
-
-Note that the folders will not exist yet and will be created in the subsequent steps
-
 1.1
 Please install all necessary packages using the code below
 ```bash
@@ -95,6 +69,32 @@ From the project directory, start Jupyter Notebook, open `task2_data_parsing.ipy
 4. Run the main analysis notebook
 
 Open `task2.ipynb` and click **Run All** to perform the full analysis and generate predictions.
+
+
+5. The final folder structure will look like this
+
+The folder structure will look like this after running the data:
+
+```bash
+|-- .gitignore
+|-- full_xgb_model.pkl
+|-- requirements.txt
+|-- task1_data_cleaning.ipynb
+|-- task1_model_training.ipynb
+|-- task2_data_parsing.ipynb
+|-- task2.ipynb
+|-- task1/
+|    |-- files required for task1
+|-- predictions/
+|    |-- .gitkeep
+|    |-- (multiple prediction CSV files)
+|-- prepared_data/
+|    |-- .gitkeep
+|    |-- (multiple CSV files)
+|-- rna_modification_data/
+|    |-- .gitkeep
+|    |-- (multiple cell line subfolders)
+```
 
 ## Using the model for other datasets
 
