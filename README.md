@@ -11,8 +11,7 @@ Open your terminal and connect via SSH using your Ubuntu user credentials. For e
 
 ```bash
 ssh -i /path/to/your/private_key.pem ubuntu@<ronin-server-address>
-```
-
+``
 Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ronin-server-address>` with the actual server address.
 
 
@@ -30,7 +29,8 @@ pip install -r requirements.txt
 
 
 1. Download dataset0.json.gz and data.info.labelled from https://canvas.nus.edu.sg/courses/78679/files/folder/TeamProject_Data/dataset_0
-
+   
+## important, if the file is .json(1).gz, remove the (1) 
 ### Important: Ensure dataset0.json.gz and data.info.labelled are in your downloads folder, dataset0.json will work fine too. 
 
 2. Open **another** terminal shell and set your working directory to your downloads folder, which should look like this
@@ -119,7 +119,7 @@ scp -i "/Users/collinsng/Desktop/dsa4262/group project/dsa4262-2510-team1-collin
     ubuntu@dsa4262-2510-team1-collin.nus.cloud:/home/ubuntu/team1_TeamProject_dsa4262/input_data/
 ```
 replace dataset3.json.gz with any file you wish to use
-
+## important, if the file is .json(1).gz, remove the (1) 
 
 then run predict_data.py
 
