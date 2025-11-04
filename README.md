@@ -88,6 +88,7 @@ The folder structure will look like this after running the data:
 |-- requirements.txt
 |-- task1.py
 |-- task2.py
+|-- predict_data.py
 |-- task1/
 |    |-- files required for task1
 |-- predictions/
