@@ -61,8 +61,9 @@ python3 task1.py
 Create the data directory and sync files from the AWS S3 bucket:
 
 ```bash
-mkdir -p ~/rna_modification_data
-cd ~/rna_modification_data
+mkdir -p /home/ubuntu/team1_TeamProject_dsa4262/rna_modification_data
+cd /home/ubuntu/team1_TeamProject_dsa4262/rna_modification_data
+
 
 aws s3 sync --no-sign-request \
     s3://sg-nex-data/data/processed_data/m6Anet/ ./
