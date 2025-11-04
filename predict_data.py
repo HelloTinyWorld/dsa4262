@@ -9,7 +9,7 @@ import joblib
 # -----------------------------
 # Settings
 # -----------------------------
-INPUT_DIR = "input data"
+INPUT_DIR = "input_data"
 TEMP_DIR = "temp_cleaned"
 OUTPUT_DIR = "output_predictions"
 CHUNK_SIZE = 5000  # for JSON flattening
