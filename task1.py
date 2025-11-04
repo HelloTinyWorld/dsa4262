@@ -9,15 +9,9 @@ from sklearn.metrics import roc_auc_score, precision_recall_curve
 from sklearn.metrics import auc
 import numpy as np
 import warnings
-import xgboost as xgb
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import roc_auc_score, make_scorer
-import xgboost as xgb
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import roc_auc_score, make_scorer
 import joblib
-
-
 
 # --------------------------
 # CONFIGURATION
@@ -139,9 +133,7 @@ print(f"Rows with matching gene_id/label from info file: {num_with_info} / {len(
 merged.to_csv(PARSED_CSV_OUTPUT, index=False)
 print(f"Saved merged dataframe to: {PARSED_CSV_OUTPUT}")
 
-
 df = merged
-
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -167,7 +159,6 @@ test_df = df[df['gene_id'].isin(test_genes)].reset_index(drop=True)
 train_df.to_csv("task1/train_set.csv", index=False)
 test_df.to_csv("task1/test_set.csv", index=False)
 
-
 # Find overlapping gene_ids
 overlap_genes = set(train_df['gene_id']).intersection(set(test_df['gene_id']))
 
@@ -190,8 +181,6 @@ X_train = train_df[feature_cols]
 y_train = train_df["label"]
 X_test = test_df[feature_cols]
 y_test = test_df["label"]
-
-
 
 warnings.filterwarnings("ignore")
 model = xgb.XGBClassifier(
@@ -239,52 +228,54 @@ full_model.fit(x_full, y_full)
 
 y_score = full_model.predict_proba(x_full)[:,1]
 auc_score = roc_auc_score(y_full, y_score)
-auc_score
+print(f"AUC ROC Score on full data: {auc_score:.4f}")
 
 precision, recall, thresholds = precision_recall_curve(y_full, y_score)
 # Use AUC function to calculate the area under the curve of precision recall curve
 auc_precision_recall = auc(recall, precision)
-auc_precision_recall
-
-
+print(f"AUC Precision-Recall Score on full data: {auc_precision_recall:.4f}")
 
 # Save the model to a file
 joblib.dump(full_model, "full_xgb_model.pkl")
 
-
-
-def predict_new_data(input_csv):
+def predict_new_data(input_csv, chunksize=100000):
     # Load the model (no encoder needed now)
     model = joblib.load("full_xgb_model.pkl")
     
-    # Load and prepare data (no label, no gene_id, drop kmer)
-    df = pd.read_csv(input_csv)
+    # Initialize list to hold chunk prediction results
+    results = []
     
-    # Pool features by mean, grouped by transcript_id and position
     feature_cols = [f"feat{i}" for i in range(1, 10)]
-    agg_funcs = {col: "mean" for col in feature_cols}
     
-    grouped = df.groupby(["transcript_id", "position"], as_index=False).agg(agg_funcs)
+    # Read CSV in chunks
+    for chunk in pd.read_csv(input_csv, chunksize=chunksize):
+        # Pool features by mean, grouped by transcript_id and position
+        agg_funcs = {col: "mean" for col in feature_cols}
+        grouped = chunk.groupby(["transcript_id", "position"], as_index=False).agg(agg_funcs)
+        
+        # Features for prediction
+        X_new = grouped[feature_cols]
+        
+        # Predict probabilities for positive class
+        preds = model.predict_proba(X_new)[:, 1]
+        
+        # Format output
+        chunk_result = pd.DataFrame({
+            "transcript_id": grouped["transcript_id"],
+            "transcript_position": grouped["position"],
+            "score": preds
+        })
+        
+        results.append(chunk_result)
     
-    # Features for prediction
-    X_new = grouped[feature_cols]
-    
-    # Predict probabilities for positive class
-    preds = model.predict_proba(X_new)[:, 1]
-    
-    # Format output
-    result = pd.DataFrame({
-        "transcript_id": grouped["transcript_id"],
-        "transcript_position": grouped["position"],
-        "score": preds
-    })
+    # Concatenate all chunk results
+    final_result = pd.concat(results, ignore_index=True)
     
     # Save output CSV
     os.makedirs("xgboost_predictions", exist_ok=True)
     out_path = f"xgboost_predictions/predictions_{os.path.basename(input_csv)}"
-    result.to_csv(out_path, index=False)
+    final_result.to_csv(out_path, index=False)
     print(f"Predictions saved to: {out_path}")
-
 
 # List of input files
 files = ["task1/parsed_dataset2.csv"]
