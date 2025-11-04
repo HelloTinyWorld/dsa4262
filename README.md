@@ -104,5 +104,17 @@ The folder structure will look like this after running the data:
 ## Using the model for other datasets
 
 1. Other datasets with the same format as in the sgnex website may be used, just download it into the rna_modification_data folder and run task2.py
+
+2. alternatively, you can also run dataset3.json.gz using the following instructions
+   
+ssh -i "/path/to/your/key.pem" ubuntu@your-ronin-host "mkdir -p /home/ubuntu/team1_TeamProject_dsa4262/task1/"
+
+scp -i "/path/to/your/key.pem" ~/Downloads/dataset3.json.gz \
+    ubuntu@your-ronin-host:/home/ubuntu/team1_TeamProject_dsa4262/task1/
+
+then run predict_data.py
+
+
+
  
 
