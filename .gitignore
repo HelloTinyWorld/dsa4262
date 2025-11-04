@@ -2,8 +2,10 @@
 predictions/*
 prepared_data/*
 rna_modification_data/*
+predictions.zip
 
 # But do NOT ignore the folders themselves (keep empty folders)
 !predictions/
 !prepared_data/
 !rna_modification_data/
+
