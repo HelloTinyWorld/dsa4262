@@ -264,3 +264,4 @@ files = ["task1/parsed_dataset2.csv"]
 for f in files:
     print(f"🔹 Running predictions on {f}...")
     predict_new_data(f)
+
