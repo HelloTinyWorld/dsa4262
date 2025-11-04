@@ -72,7 +72,7 @@ This downloads all RNA modification data into `~/rna_modification_data`.
 
 3. Run this command to get task2 predictions
 ```bash
-cd team1_TeamProject_dsa4262/
+cd ../
 python3 task2.py
 
 ```
