@@ -11,7 +11,7 @@ Open your terminal and connect via SSH using your Ubuntu user credentials. For e
 
 ```bash
 ssh -i /path/to/your/private_key.pem ubuntu@<ronin-server-address>
-``
+```
 
 Replace `/path/to/your/private_key.pem` with your SSH private key path, and `<ronin-server-address>` with the actual server address.
 
