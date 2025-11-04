@@ -236,14 +236,22 @@ joblib.dump(full_model, "full_xgb_model.pkl")
 # --------------------------
 # STEP 9: Prediction function using chunks
 # --------------------------
-def predict_new_data(input_csv, chunk_size=CHUNK_SIZE):
+def predict_new_data(input_csv, chunk_size=1000):
+    import joblib
+    import pandas as pd
+    import os
+
     model = joblib.load("full_xgb_model.pkl")
+    feature_cols = [f"feat{i}" for i in range(1, 10)]
     results = []
 
     for chunk in pd.read_csv(input_csv, chunksize=chunk_size):
-        grouped = chunk.groupby(["transcript_id", "position"], as_index=False).mean()
-        X_new = grouped[feature_cols[:-1]]
+        # Aggregate only numeric feature columns
+        grouped = chunk.groupby(["transcript_id", "position"], as_index=False)[feature_cols].mean()
+
+        X_new = grouped[feature_cols]
         preds = model.predict_proba(X_new)[:,1]
+
         chunk_res = pd.DataFrame({
             "transcript_id": grouped["transcript_id"],
             "transcript_position": grouped["position"],
@@ -256,6 +264,7 @@ def predict_new_data(input_csv, chunk_size=CHUNK_SIZE):
     out_path = f"xgboost_predictions/predictions_{os.path.basename(input_csv)}"
     final_res.to_csv(out_path, index=False)
     print(f"Predictions saved to: {out_path}")
+
 
 # --------------------------
 # Run predictions for files
