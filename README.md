@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ## Task 1: 
 
-### Important, since the fully trained model is already in the github, the code by default skips the training portion. If you really want to train the model, the video guide covers it too, but for simplicity you can skip steps 1 to 3 (it takes a long time to run anyways) [Click here to skip the optional part](##step4)
+### Important, since the fully trained model is already in the github, the code by default skips the training portion. If you really want to train the model, the video guide covers it too, but for simplicity you can skip steps 1 to 3 (it takes a long time to run anyways) [Click here to skip the optional part](#step4)
 
 
 1. Download dataset0.json.gz and data.info.labelled from https://canvas.nus.edu.sg/courses/78679/files/folder/TeamProject_Data/dataset_0
