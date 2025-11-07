@@ -116,6 +116,7 @@ The folder structure will look like this after running the data:
 
 2. alternatively, you can also run dataset3.json.gz or any file that ends with .json.gz or .json using the following instructions:
 
+### On a new terminal shell that is not yet connected to ronin:
 ```bash
 ssh -i "/Users/collinsng/Desktop/dsa4262/group project/dsa4262-2510-team1-collin.pem" \
     ubuntu@dsa4262-2510-team1-collin.nus.cloud "mkdir -p /home/ubuntu/team1_TeamProject_dsa4262/input_data/"
@@ -127,7 +128,8 @@ scp -i "/Users/collinsng/Desktop/dsa4262/group project/dsa4262-2510-team1-collin
 replace dataset3.json.gz with any file you wish to use
 ## important, if the file is .json(1).gz, remove the (1) 
 
-then run predict_data.py
+then run predict_data.py on the terminal that is connected to ronin
+
 
 
 
