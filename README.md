@@ -128,7 +128,12 @@ scp -i "/Users/collinsng/Desktop/dsa4262/group project/dsa4262-2510-team1-collin
 replace dataset3.json.gz with any file you wish to use
 ## important, if the file is .json(1).gz, remove the (1) 
 
-then run predict_data.py on the terminal that is connected to ronin
+then run predict_data.py on the terminal that is connected to ronin with:
+```bash
+cd ..
+cd team1_TeamProject_dsa4262/
+python3 predict_data.py
+```
 
 
 
